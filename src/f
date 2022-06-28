@@ -1,0 +1,22 @@
+const num = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eigth', 'nine', 'ten']
+const toNineteen = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+const toHundred = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+const digitNumber = ['hundred', 'thousand', 'million', 'billion', 'trillion']
+
+const numSplit = String(number).split('')
+
+if (number < 20)
+    return toNineteen[number]
+
+if (number < 100 && numSplit[1] == '0')
+    return digitNumber[numSplit[0]]
+
+if (number < 100)
+    return `${digitNumber[numSplit[0]]} ${toNineteen[numSplit[1]]}`
+
+if (number < 1000 & numSplit[1] == '0' && numSplit[2] == '0')
+    return `${toNineteen[numSplit[0]]} hundred`
+
+if (number < 1000)
+    return `${toNineteen[numSplit[0]]} hundred ${digitNumber[numSplit[1]]} ${toNineteen[numSplit[2]]}
+}`
